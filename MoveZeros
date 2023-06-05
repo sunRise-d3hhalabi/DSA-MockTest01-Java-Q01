@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication1;
+
+/**
+ *
+ * @author Dana Halabi
+ */
+public class JavaApplication1 {
+    
+public static void moveZeros(int[] nums) {
+        int n = nums.length;
+        int zeroIndex = 0;
+
+        // Move all non-zero elements to the front
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != 0) {
+                nums[zeroIndex] = nums[i];
+                zeroIndex++;
+            }
+        }
+
+        // Fill the remaining elements with zeros
+        while (zeroIndex < n) {
+            nums[zeroIndex] = 0;
+            zeroIndex++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0};
+
+        System.out.println("Original Array: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+
+        moveZeros(nums);
+
+        System.out.println("\nArray after moving zeros to the end: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+    }    
+}
